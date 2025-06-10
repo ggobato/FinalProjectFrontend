@@ -1,6 +1,7 @@
 .header{
     display: flex;
     align-items: center;
+    background-color: black;
 }
 
 .header a {
@@ -11,13 +12,16 @@
 
 .header .logo {
     max-height: 32px;
+    color: #ffffff;
 }
 
 .header .title-group{
     padding-left: 25px;
+    color: #ffffff;
 }
 
 .header .title-group i {
     padding-right: 5px;
+    color: #ffffff;
 }
 
