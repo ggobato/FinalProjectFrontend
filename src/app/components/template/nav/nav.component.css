@@ -11,5 +11,9 @@
 
 .content{
     padding: 16px;
-    background-color: #808080   ;
+    background-color: #808080;
+}
+
+.container{
+    height: 100vh;
 }

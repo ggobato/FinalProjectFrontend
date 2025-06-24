@@ -1,5 +1,14 @@
 table{
     width: 100%;
+    background-color: black;
+}
+
+table th{
+    color: #fff;
+}
+
+.proId > th > ng-container > table{
+    color: #fff;
 }
 
 .edit > i{
