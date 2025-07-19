@@ -27,15 +27,11 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { RedDirective } from './directives/red.directive';
-import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 
 //importações
-import { ProductReadComponent } from './components/product/product-read/product-read.component';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { FormaPagamentoReadComponent } from './components/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
@@ -47,6 +43,10 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
 import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ProdutoCreateComponent } from './components/produtos/produto-create/produto-create.component';
+import { ProdutoReadComponent } from './components/produtos/produto-read/produto-read.component';
+import { ProdutoUpdateComponent } from './components/produtos/produto-update/produto-update.component';
+import { ProdutoDeleteComponent } from './components/produtos/produto-delete/produto-delete.component';
 
 registerLocaleData(localePt)
 
@@ -59,10 +59,6 @@ registerLocaleData(localePt)
     HomeComponent,
     ProductCrudComponent,
     RedDirective,
-    ProductCreateComponent,
-    ProductReadComponent,
-    ProductUpdateComponent,
-    ProductDeleteComponent,
     FormaPagamentoReadComponent,
     FormaPagamentoCrudComponent,
     FormaPagamentoCreateComponent,
@@ -73,7 +69,11 @@ registerLocaleData(localePt)
     ClienteCrudComponent,
     ClienteReadComponent,
     ClienteUpdateComponent,
-    ClienteDeleteComponent
+    ClienteDeleteComponent,
+    ProdutoCreateComponent,
+    ProdutoReadComponent,
+    ProdutoUpdateComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,

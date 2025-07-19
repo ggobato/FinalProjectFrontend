@@ -18,7 +18,7 @@ export class ProductCrudComponent implements OnInit {
 
   //criando interação com botoes
   navigateToProductCreate(): void{
-    this.router.navigate(['/products/create'])
+    this.router.navigate(['/produtos/create'])
   }
 
 }

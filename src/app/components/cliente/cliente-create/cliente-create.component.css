@@ -1,3 +1,16 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px; /* ajuste conforme altura do header */
+}
+
+mat-card {
+  width: 100%;
+  max-width: 1300px; /* limite de largura */
+  height: 700px;
+  padding: 24px;
+}
+
 form{
     display: flex;
     flex-direction: column;

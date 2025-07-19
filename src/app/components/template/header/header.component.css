@@ -1,7 +1,14 @@
 .header{
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 
+        inset -2px -2px 5px rgba(255, 255, 255, 0.1),  /* brilho sutil no canto superior esquerdo */
+        inset 2px 2px 5px rgba(0, 0, 0, 0.4),          /* sombra no canto inferior direito */
+        4px 0 10px rgba(0, 0, 0, 0.6);                /* sombra externa direita para "levantar" */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header a {
@@ -12,16 +19,16 @@
 
 .header .logo {
     max-height: 32px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .header .title-group{
     padding-left: 25px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .header .title-group i {
     padding-right: 5px;
-    color: #ffffff;
+    color: #000000;
 }
 
