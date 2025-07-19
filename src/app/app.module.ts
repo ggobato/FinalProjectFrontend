@@ -32,21 +32,16 @@ import { RedDirective } from './directives/red.directive';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { FormaPagamentoReadComponent } from './components/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
-import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
-import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
-import { FormaPagamentoUpdateComponent } from './components/formaPagamento/forma-pagamento-update/forma-pagamento-update.component';
-import { FormaPagamentoDeleteComponent } from './components/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 //import { ClienteComponent } from './components/cliente/cliente.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
-import { ProdutoCreateComponent } from './components/produtos/produto-create/produto-create.component';
-import { ProdutoReadComponent } from './components/produtos/produto-read/produto-read.component';
-import { ProdutoUpdateComponent } from './components/produtos/produto-update/produto-update.component';
-import { ProdutoDeleteComponent } from './components/produtos/produto-delete/produto-delete.component';
+import { ProdutosCreateComponent } from './components/produtos/produtos-create/produtos-create.component';
+import { ProdutosReadComponent } from './components/produtos/produtos-read/produtos-read.component';
+import { ProdutosUpdateComponent } from './components/produtos/produtos-update/produtos-update.component';
+import { ProdutosDeleteComponent } from './components/produtos/produtos-delete/produtos-delete.component';
 
 registerLocaleData(localePt)
 
@@ -59,21 +54,16 @@ registerLocaleData(localePt)
     HomeComponent,
     ProductCrudComponent,
     RedDirective,
-    FormaPagamentoReadComponent,
-    FormaPagamentoCrudComponent,
-    FormaPagamentoCreateComponent,
-    FormaPagamentoUpdateComponent,
-    FormaPagamentoDeleteComponent,
     ClienteCreateComponent,
     //ClienteComponent,
     ClienteCrudComponent,
     ClienteReadComponent,
     ClienteUpdateComponent,
     ClienteDeleteComponent,
-    ProdutoCreateComponent,
-    ProdutoReadComponent,
-    ProdutoUpdateComponent,
-    ProdutoDeleteComponent
+    ProdutosCreateComponent,
+    ProdutosReadComponent,
+    ProdutosUpdateComponent,
+    ProdutosDeleteComponent
   ],
   imports: [
     BrowserModule,

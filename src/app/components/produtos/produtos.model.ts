@@ -1,4 +1,4 @@
-export interface Produto{
+export interface Produtos {
     id_produto?: number
     nome_prod: string
     marca_prod: string
