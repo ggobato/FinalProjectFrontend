@@ -42,6 +42,17 @@ import { ProdutosCreateComponent } from './components/produtos/produtos-create/p
 import { ProdutosReadComponent } from './components/produtos/produtos-read/produtos-read.component';
 import { ProdutosUpdateComponent } from './components/produtos/produtos-update/produtos-update.component';
 import { ProdutosDeleteComponent } from './components/produtos/produtos-delete/produtos-delete.component';
+import { FornecedoresCreateComponent } from './components/fornecedores/fornecedores-create/fornecedores-create.component';
+import { FornecedoresReadComponent } from './components/fornecedores/fornecedores-read/fornecedores-read.component';
+import { FornecedoresUpdateComponent } from './components/fornecedores/fornecedores-update/fornecedores-update.component';
+import { FornecedoresDeleteComponent } from './components/fornecedores/fornecedores-delete/fornecedores-delete.component';
+import { FornecedoresCrudComponent } from './views/fornecedores-crud/fornecedores-crud/fornecedores-crud.component';
+//import { FuncionariosComponent } from './components/funcionarios/funcionarios/funcionarios.component';
+import { FuncionariosReadComponent } from './components/funcionarios/funcionarios-read/funcionarios-read.component';
+import { FuncionariosCreateComponent } from './components/funcionarios/funcionarios-create/funcionarios-create.component';
+import { FuncionariosUpdateComponent } from './components/funcionarios/funcionarios-update/funcionarios-update.component';
+import { FuncionariosDeleteComponent } from './components/funcionarios/funcionarios-delete/funcionarios-delete.component';
+import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud/funcionarios-crud.component';
 
 registerLocaleData(localePt)
 
@@ -63,13 +74,24 @@ registerLocaleData(localePt)
     ProdutosCreateComponent,
     ProdutosReadComponent,
     ProdutosUpdateComponent,
-    ProdutosDeleteComponent
+    ProdutosDeleteComponent,
+    FornecedoresCreateComponent,
+    FornecedoresReadComponent,
+    FornecedoresUpdateComponent,
+    FornecedoresDeleteComponent,
+    FornecedoresCrudComponent,
+    //FuncionariosComponent,
+    FuncionariosReadComponent,
+    FuncionariosCreateComponent,
+    FuncionariosUpdateComponent,
+    FuncionariosDeleteComponent,
+    FuncionariosCrudComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    //precisamos declara os modulos de material importados
+    //precisamos declarar os modulos de material importados
     MatToolbarModule, 
     MatSidenavModule,
     MatListModule,

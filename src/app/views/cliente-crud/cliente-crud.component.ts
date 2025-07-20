@@ -8,16 +8,12 @@ import { Router } from '@angular/router';
 })
 export class ClienteCrudComponent implements OnInit {
 
-  //construtor para configurar botao para tela de produto
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  //criando interação com botoes
   navigateToClienteCreate(): void{
     this.router.navigate(['/clientes/create'])
   }
-
-
 }

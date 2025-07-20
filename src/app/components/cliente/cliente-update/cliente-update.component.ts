@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente.model';
+import { Clientes } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,15 +10,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ClienteUpdateComponent implements OnInit {
 
-  cliente!: Cliente;
+  cliente!: Clientes;
 
   constructor(private clienteService: ClienteService, 
     private router: Router, 
     private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const cliId = this.route.snapshot.paramMap.get('cliId')
-    this.clienteService.readById(cliId!).subscribe((cliente: Cliente) =>{
+    const id_cliente = this.route.snapshot.paramMap.get('id_cliente')
+    this.clienteService.readById(id_cliente!).subscribe((cliente: Clientes) =>{
       this.cliente = cliente
     })
   }

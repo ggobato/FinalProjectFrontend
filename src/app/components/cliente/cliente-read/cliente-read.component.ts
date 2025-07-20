@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente.model';
+import { Clientes } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { ClienteService } from '../cliente.service';
 })
 export class ClienteReadComponent implements OnInit {
 
-  clientes!: Cliente[]
-  displayedColumns = ['cliId', 'cliNome', 'cliCpf', 'cliEmail','cliTelefone', 'action']
+  clientes!: Clientes[]
+  displayedColumns = ['id_cliente', 'nome_cli', 'cpf_cli', 'telefone_cli','email_cli', 'action']
 
   constructor(private clienteService: ClienteService) { }
 
