@@ -6,7 +6,7 @@
                 <input matInput placeholder="Nome" [(ngModel)]="fornecedor.nome_for" name="nome_for">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="CNPJ" [(ngModel)]="fornecedor.cnpj_for" name="cnpj_for">
+                <input matInput placeholder="CNPJ" [value]="cnpjFormatado" [(ngModel)]="fornecedor.cnpj_for" name="cnpj_for" (input)="onCnpjInput($event)" required maxlength="18">
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="Telefone" [(ngModel)]="fornecedor.telefone_for" name="telefone_for">

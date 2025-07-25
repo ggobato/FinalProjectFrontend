@@ -6,10 +6,10 @@
                 <input matInput placeholder="Nome" [(ngModel)]="funcionario.nome_func" name="nome_func">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="CPF" [(ngModel)]="funcionario.cpf_func" name="cpf_func">
+                <input matInput placeholder="CPF" [value]="cpfFormatado" [(ngModel)]="funcionario.cpf_func" name="cpf_func" (input)="onCpfInput($event)" required maxlength="14">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Telefone" [(ngModel)]="funcionario.telefone_func" name="telefone_func">
+                <input matInput placeholder="Telefone" [value]="telefoneFormatado" [(ngModel)]="funcionario.telefone_func" name="telefone_func" (input)="onTelefoneInput($event)" maxlength="15">
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="Email" [(ngModel)]="funcionario.email_func" name="email_func">
