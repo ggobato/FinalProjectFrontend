@@ -1,11 +1,13 @@
-<!--<ul>
-    <li *ngFor="let product of products">
-        {{product.id}} => {{product.name}} => {{product.price}}
-    </li>
-</ul> -->
+<div class="search-container">
+  <mat-form-field appearance="fill" class="custom-search">
+    <mat-label>Buscar por Nome ou CPF</mat-label>
+    <input matInput [(ngModel)]="filtro" (ngModelChange)="filtrarClientes()" placeholder="Buscar..." />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
 
 <div class="mat-elevation-z4">
-    <table mat-table [dataSource]="clientes">
+    <table mat-table [dataSource]="clientesFiltrados">
       <!-- Id Column -->
       <ng-container matColumnDef="id_cliente">
         <th mat-header-cell *matHeaderCellDef>ID</th>

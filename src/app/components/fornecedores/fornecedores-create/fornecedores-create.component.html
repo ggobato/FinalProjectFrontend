@@ -9,13 +9,12 @@
                 <input matInput placeholder="CNPJ" [value]="cnpjFormatado" [(ngModel)]="fornecedor.cnpj_for" name="cnpj_for" (input)="onCnpjInput($event)" required maxlength="18">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Telefone" [(ngModel)]="fornecedor.telefone_for" name="telefone_for">
+                <input matInput placeholder="Telefone" [value]="telefoneFormatado" [(ngModel)]="fornecedor.telefone_for" name="telefone_for" (input)="onTelefoneInput($event)" required maxlength="15">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Email" [(ngModel)]="fornecedor.email_for" name="email_for">
+                <input matInput placeholder="Email" [(ngModel)]="fornecedor.email_for" name="email_for" required>
             </mat-form-field>
         </form>
-
         <button mat-raised-button (click)="createFornecedor()" color="primary">
             Salvar
         </button>
