@@ -16,6 +16,28 @@
             </mat-form-field>
         </form>
 
+        <mat-card-title>Dados de Endereço</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="CEP" [value]="cliente.contatos.cep" name="cep" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Município" [value]="cliente.contatos.municipio" name="municipio" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Logradouro" [value]="cliente.contatos.logradouro" name="logradouro" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Número" [value]="cliente.contatos.numero" name="numero" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Complemento" [value]="cliente.contatos.complemento" name="complemento" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="UF" [value]="cliente.contatos.uf" name="uf" required maxlength="2" disabled>
+            </mat-form-field>
+        </form>
+
         <button mat-raised-button (click)="deleteCliente()" color="warn">
             Excluir
         </button>

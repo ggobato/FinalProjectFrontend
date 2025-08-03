@@ -12,6 +12,7 @@ export class FornecedoresCreateComponent implements OnInit {
 
   fornecedor: Fornecedores = {
     nome_for: '',
+    razao_social_for: '',
     cnpj_for:'',
     telefone_for:'',
     email_for:''
@@ -76,7 +77,7 @@ export class FornecedoresCreateComponent implements OnInit {
 
 
   createFornecedor(): void {
-    if (!this.fornecedor.nome_for || !this.fornecedor.cnpj_for || !this.fornecedor.telefone_for || !this.fornecedor.email_for) {
+    if (!this.fornecedor.nome_for || !this.fornecedor.cnpj_for || !this.fornecedor.telefone_for || !this.fornecedor.razao_social_for) {
       alert('Preencha todos os campos obrigatórios!(*)');
       return;
     }

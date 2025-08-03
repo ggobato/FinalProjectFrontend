@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../cliente.service';
 import { Router } from '@angular/router';
-import { Clientes } from '../cliente.model';
+import { ClienteDTO } from '../cliente.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cliente-create',
@@ -10,19 +11,46 @@ import { Clientes } from '../cliente.model';
 })
 export class ClienteCreateComponent implements OnInit {
 
-  cliente: Clientes = {
+  cliente: ClienteDTO = {
     nome_cli: '',
     cpf_cli:'',
     telefone_cli:'',
-    email_cli:''
+    email_cli:'',
+    contatos: {
+      cep: '',
+      municipio: '',
+      logradouro: '',
+      numero: '',
+      complemento: '',
+      uf: ''
+    }
   }
 
   //importando clienteService
-  constructor(private clienteService: ClienteService,
+  constructor(
+    private http: HttpClient,
+    private clienteService: ClienteService,
     private router: Router) { }
   
   ngOnInit(): void {
     
+  }
+
+  buscaEnderecoPorCep(cep: string): void {
+    const cepNumeros = cep.replace(/\D/g, '');
+
+    this.http.get<any>(`https://viacep.com.br/ws/${cepNumeros}/json/`)
+      .subscribe(dados => {
+        if (!dados.erro) {
+          this.cliente.contatos.logradouro = dados.logradouro;
+          this.cliente.contatos.municipio = dados.localidade;
+          this.cliente.contatos.uf = dados.uf;
+        } else {
+          console.warn('CEP não encontrado:', cep)
+        }
+      }, erro => {
+        console.error('Erro ao buscar CEP:', erro);
+      });
   }
 
   cpfFormatado: string = '';
@@ -45,6 +73,31 @@ export class ClienteCreateComponent implements OnInit {
     }
 
     this.cpfFormatado = valor;
+  }
+
+  cepFormatado: string = '';
+
+  onCepInput(event: any): void {
+    let valor = event.target.value;
+
+    // Remove qualquer caractere que não seja número
+    valor = valor.replace(/\D/g, '');
+
+    // Limita a 8 dígitos
+    if (valor.length > 8) {
+      valor = valor.substring(0, 8);
+    }
+
+    // Aplica a máscara XXXXX-XXX
+    if (valor.length > 5) {
+      valor = valor.replace(/^(\d{5})(\d{1,3})$/, '$1-$2');
+    }
+
+    this.cepFormatado = valor;
+
+    if (valor.length === 9) {
+      this.buscaEnderecoPorCep(valor);
+    }
   }
 
   telefoneFormatado: string = '';

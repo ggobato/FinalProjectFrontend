@@ -5,7 +5,7 @@
     display: flex;
     /*coloca no final da linha. sendo no lado direiro parte inferior*/
     justify-content: flex-end;
-    background-color: #808080;
+    background-color: #474448;
     height: 50px;
 }
 
@@ -13,4 +13,5 @@
     font-size: 1.1rem;
     font-weight: 300;
     align-items: baseline;
+    color: #fff;
 }

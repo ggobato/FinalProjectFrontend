@@ -12,7 +12,7 @@ export class FornecedoresReadComponent implements OnInit {
   fornecedores!: Fornecedores[]
   fornecedoresFiltrados!: Fornecedores[]
   filtro: string = ''
-  displayedColumns = ['id_fornecedor', 'nome_for', 'cnpj_for', 'telefone_for', 'email_for', 'action']
+  displayedColumns = ['id_fornecedor', 'nome_for', 'razao_social_for', 'cnpj_for', 'telefone_for', 'email_for', 'action']
 
   constructor(private fornecedorService: FornecedorService) { }
 

@@ -74,7 +74,7 @@ export class FornecedoresUpdateComponent implements OnInit {
   }
 
   updateFornecedor(): void {
-    if (!this.fornecedor.nome_for || !this.fornecedor.cnpj_for || !this.fornecedor.telefone_for || !this.fornecedor.email_for) {
+    if (!this.fornecedor.nome_for || !this.fornecedor.cnpj_for || !this.fornecedor.telefone_for || !this.fornecedor.razao_social_for) {
       alert('Preencha todos os campos obrigatórios!(*)');
       return;
     }

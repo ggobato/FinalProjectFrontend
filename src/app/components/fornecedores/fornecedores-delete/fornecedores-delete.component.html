@@ -3,7 +3,10 @@
         <mat-card-title>Excluir Fornecedor</mat-card-title>
         <form>
             <mat-form-field>
-                <input matInput placeholder="Nome" [value]="fornecedor.nome_for" name="nome_for" disabled>
+                <input matInput placeholder="Nome Fantasia" [value]="fornecedor.nome_for" name="nome_for" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="razão Social" [value]="fornecedor.razao_social_for" name="razao_social_for" disabled>
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="CNPJ" [value]="fornecedor.cnpj_for" name="cnpj_for" disabled>

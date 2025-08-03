@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Clientes } from '../cliente.model';
+import { ClienteDTO } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ClienteDeleteComponent implements OnInit {
 
-  cliente!: Clientes;
+  cliente!: ClienteDTO;
 
   constructor(
     private clienteService: ClienteService, 

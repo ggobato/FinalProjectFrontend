@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 //importando matSnackBar
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { Clientes } from './cliente.model';
+import { ClienteDTO } from './cliente.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,27 +23,27 @@ export class ClienteService {
     })
   }
 
-  create(cliente: Clientes): Observable<Clientes>{
-    return this.http.post<Clientes>(this.baseUrl, cliente)
+  create(cliente: ClienteDTO): Observable<ClienteDTO>{
+    return this.http.post<ClienteDTO>(this.baseUrl, cliente)
   }
 
-  read(): Observable<Clientes[]>{
-    return this.http.get<Clientes[]>(this.baseUrl)
+  read(): Observable<ClienteDTO[]>{
+    return this.http.get<ClienteDTO[]>(this.baseUrl)
   }
 
-  readById(id_cliente: string): Observable<Clientes>{
+  readById(id_cliente: string): Observable<ClienteDTO>{
     const url = `${this.baseUrl}/${id_cliente}`
-    return this.http.get<Clientes>(url)
+    return this.http.get<ClienteDTO>(url)
   }
  
-  update(cliente: Clientes): Observable<Clientes>{
+  update(cliente: ClienteDTO): Observable<ClienteDTO>{
     const url = `${this.baseUrl}/${cliente.id_cliente}`
-    return this.http.put<Clientes>(url, cliente)
+    return this.http.put<ClienteDTO>(url, cliente)
   }
   
-  delete(id_cliente: number): Observable<Clientes>{    
+  delete(id_cliente: number): Observable<ClienteDTO>{    
     const url = `${this.baseUrl}/${id_cliente}`
-    return this.http.delete<Clientes>(url)
+    return this.http.delete<ClienteDTO>(url)
   }
 
 

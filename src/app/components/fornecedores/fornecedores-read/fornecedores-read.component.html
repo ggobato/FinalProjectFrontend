@@ -16,8 +16,13 @@
   
       <!-- Name Column -->
       <ng-container matColumnDef="nome_for">
-        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <th mat-header-cell *matHeaderCellDef>Nome Fantasia</th>
         <td mat-cell *matCellDef="let row">{{row.nome_for}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="razao_social_for">
+        <th mat-header-cell *matHeaderCellDef>Razão Social</th>
+        <td mat-cell *matCellDef="let row">{{row.razao_social_for}}</td>
       </ng-container>
   
       <!-- Price Column -->

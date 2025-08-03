@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Clientes } from '../cliente.model';
+import { ClienteDTO } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { ClienteService } from '../cliente.service';
 })
 export class ClienteReadComponent implements OnInit {
 
-  clientes!: Clientes[]
-  clientesFiltrados!: Clientes[]
+  clientes!: ClienteDTO[]
+  clientesFiltrados!: ClienteDTO[]
   filtro: string = ''
-  displayedColumns = ['id_cliente', 'nome_cli', 'cpf_cli', 'telefone_cli','email_cli', 'action']
+  displayedColumns = ['id_cliente', 'nome_cli', 'cpf_cli', 'telefone_cli', 'email_cli', 'cep_ctt', 'endereco', 'complemento_ctt', 'municipio_ctt', 'uf_ctt', 'action']
 
   constructor(private clienteService: ClienteService) { }
 
