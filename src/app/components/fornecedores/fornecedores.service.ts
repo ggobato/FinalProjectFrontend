@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 //importando matSnackBar
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { Fornecedores } from './fornecedores.model';
+import { FornecedorDTO } from './fornecedores.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,26 +23,26 @@ export class FornecedorService {
     })
   }
 
-  create(fornecedor: Fornecedores): Observable<Fornecedores>{
-    return this.http.post<Fornecedores>(this.baseUrl, fornecedor)
+  create(fornecedor: FornecedorDTO): Observable<FornecedorDTO>{
+    return this.http.post<FornecedorDTO>(this.baseUrl, fornecedor)
   }
 
-  read(): Observable<Fornecedores[]>{
-    return this.http.get<Fornecedores[]>(this.baseUrl)
+  read(): Observable<FornecedorDTO[]>{
+    return this.http.get<FornecedorDTO[]>(this.baseUrl)
   }
 
-  readById(id_fornecedor: string): Observable<Fornecedores>{
+  readById(id_fornecedor: string): Observable<FornecedorDTO>{
     const url = `${this.baseUrl}/${id_fornecedor}`
-    return this.http.get<Fornecedores>(url)
+    return this.http.get<FornecedorDTO>(url)
   }
  
-  update(fornecedor: Fornecedores): Observable<Fornecedores>{
+  update(fornecedor: FornecedorDTO): Observable<FornecedorDTO>{
     const url = `${this.baseUrl}/${fornecedor.id_fornecedor}`
-    return this.http.put<Fornecedores>(url, fornecedor)
+    return this.http.put<FornecedorDTO>(url, fornecedor)
   }
   
-  delete(id_fornecedor: number): Observable<Fornecedores>{    
+  delete(id_fornecedor: number): Observable<FornecedorDTO>{    
     const url = `${this.baseUrl}/${id_fornecedor}`
-    return this.http.delete<Fornecedores>(url)
+    return this.http.delete<FornecedorDTO>(url)
   }
 }  

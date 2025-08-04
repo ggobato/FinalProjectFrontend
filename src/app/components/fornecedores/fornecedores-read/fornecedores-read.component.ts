@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Fornecedores } from '../fornecedores.model';
+import { FornecedorDTO } from '../fornecedores.model';
 import { FornecedorService } from '../fornecedores.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { FornecedorService } from '../fornecedores.service';
 })
 export class FornecedoresReadComponent implements OnInit {
 
-  fornecedores!: Fornecedores[]
-  fornecedoresFiltrados!: Fornecedores[]
+  fornecedores!: FornecedorDTO[]
+  fornecedoresFiltrados!: FornecedorDTO[]
   filtro: string = ''
-  displayedColumns = ['id_fornecedor', 'nome_for', 'razao_social_for', 'cnpj_for', 'telefone_for', 'email_for', 'action']
+  displayedColumns = ['id_fornecedor', 'nome_for', 'razao_social_for', 'cnpj_for', 'telefone_for', 'email_for', 'cep_ctt', 'endereco', 'complemento_ctt', 'municipio_ctt', 'uf_ctt', 'action']
 
   constructor(private fornecedorService: FornecedorService) { }
 

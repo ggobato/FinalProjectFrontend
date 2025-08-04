@@ -1,6 +1,7 @@
 .header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: rgb(255, 255, 255);
     position: fixed;
     z-index: 1000;
@@ -10,7 +11,7 @@
         4px 0 10px rgba(0, 0, 0, 0.6);                
     border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
-
+/*
 .header a {
     display: flex;
     align-items: center;
@@ -30,5 +31,37 @@
 .header .title-group i {
     padding-right: 5px;
     color: #000000;
+}
+*/
+
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto; /* ocupa o espaço entre esquerda e direita */
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 12px;/* espaço entre os ícones */
+}
+
+.btn-header i {
+  font-size: 20px;
+  color: #000;
+  transition: color 0.2s;
+}
+
+.btn-header i.bi-linkedin:hover {
+  color: #0A66C2; /* azul para LinkedIn, ou algo mais neutro */
+}
+
+.logo {
+    height: 45px;
+    width: 200px;
 }
 

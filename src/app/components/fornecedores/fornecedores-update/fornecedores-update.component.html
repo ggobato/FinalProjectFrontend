@@ -18,6 +18,28 @@
                 <input matInput placeholder="Email" [(ngModel)]="fornecedor.email_for" name="email_for">
             </mat-form-field>
         </form>
+
+        <mat-card-title>Dados de Endereço</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="CEP" [value]="cepFormatado" [(ngModel)]="fornecedor.contatos.cep" name="cep" (input)="onCepInput($event)" required maxlength="9">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Município" [(ngModel)]="fornecedor.contatos.municipio" name="municipio" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Logradouro" [(ngModel)]="fornecedor.contatos.logradouro" name="logradouro" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Número" [(ngModel)]="fornecedor.contatos.numero" name="numero" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Complemento" [(ngModel)]="fornecedor.contatos.complemento" name="complemento">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="UF" [(ngModel)]="fornecedor.contatos.uf" name="uf" required maxlength="2">
+            </mat-form-field>
+        </form>
         <button mat-raised-button (click)="updateFornecedor()" color="primary">
             Atualizar
         </button>

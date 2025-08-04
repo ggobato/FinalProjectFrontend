@@ -80,15 +80,12 @@ export class ClienteCreateComponent implements OnInit {
   onCepInput(event: any): void {
     let valor = event.target.value;
 
-    // Remove qualquer caractere que não seja número
     valor = valor.replace(/\D/g, '');
 
-    // Limita a 8 dígitos
     if (valor.length > 8) {
       valor = valor.substring(0, 8);
     }
 
-    // Aplica a máscara XXXXX-XXX
     if (valor.length > 5) {
       valor = valor.replace(/^(\d{5})(\d{1,3})$/, '$1-$2');
     }
@@ -124,7 +121,7 @@ export class ClienteCreateComponent implements OnInit {
   }
 
   createCliente(): void {
-    if (!this.cliente.nome_cli || !this.cliente.cpf_cli || !this.cliente.telefone_cli || !this.cliente.email_cli) {
+    if (!this.cliente.nome_cli || !this.cliente.cpf_cli || !this.cliente.telefone_cli || !this.cliente.contatos.cep || !this.cliente.contatos.municipio || !this.cliente.contatos.logradouro || !this.cliente.contatos.numero || !this.cliente.contatos.uf) {
       alert('Preencha todos os campos obrigatórios!(*)');
       return;
     }
@@ -132,6 +129,11 @@ export class ClienteCreateComponent implements OnInit {
     if (this.cliente.cpf_cli.length < 14) {
       this.clienteService.showMessage('CPF inválido');
       return;
+    }
+
+    if (this.cliente.contatos.cep.length < 9) {
+      this.clienteService.showMessage('CEP inválido');
+      return
     }
 
     if (this.cliente.telefone_cli.length < 15) {

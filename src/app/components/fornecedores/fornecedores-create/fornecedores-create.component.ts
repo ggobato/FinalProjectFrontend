@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Fornecedores } from '../fornecedores.model';
+import { FornecedorDTO } from '../fornecedores.model';
 import { FornecedorService } from '../fornecedores.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fornecedores-create',
@@ -10,19 +11,46 @@ import { Router } from '@angular/router';
 })
 export class FornecedoresCreateComponent implements OnInit {
 
-  fornecedor: Fornecedores = {
+  fornecedor: FornecedorDTO = {
     nome_for: '',
     razao_social_for: '',
     cnpj_for:'',
     telefone_for:'',
-    email_for:''
+    email_for:'',
+    contatos: {
+      cep: '',
+      municipio: '',
+      logradouro: '',
+      numero: '',
+      complemento: '',
+      uf: ''
+    }
   }
 
-  constructor(private fornecedorService: FornecedorService,
+  constructor(
+    private http: HttpClient,
+    private fornecedorService: FornecedorService,
     private router: Router) { }
 
   ngOnInit(): void {
 
+  }
+
+  buscaEnderecoPorCep(cep: string): void {
+    const cepNumeros = cep.replace(/\D/g, '');
+
+    this.http.get<any>(`https://viacep.com.br/ws/${cepNumeros}/json/`)
+      .subscribe(dados => {
+        if (!dados.erro) {
+          this.fornecedor.contatos.logradouro = dados.logradouro;
+          this.fornecedor.contatos.municipio = dados.localidade;
+          this.fornecedor.contatos.uf = dados.uf;
+        } else {
+          console.warn('CEP não encontrado:', cep)
+        }
+      }, erro => {
+        console.error('Erro ao buscar CEP:', erro);
+      });
   }
 
   cnpjFormatado: string = '';
@@ -52,6 +80,28 @@ export class FornecedoresCreateComponent implements OnInit {
     event.target.value = value;
   }
 
+  cepFormatado: string = '';
+
+  onCepInput(event: any): void {
+    let valor = event.target.value;
+
+    valor = valor.replace(/\D/g, '');
+
+    if (valor.length > 8) {
+      valor = valor.substring(0, 8);
+    }
+
+    if (valor.length > 5) {
+      valor = valor.replace(/^(\d{5})(\d{1,3})$/, '$1-$2');
+    }
+
+    this.cepFormatado = valor;
+
+    if (valor.length === 9) {
+      this.buscaEnderecoPorCep(valor);
+    }
+  }
+
   telefoneFormatado: string = '';
 
   onTelefoneInput(event: any): void {
@@ -77,7 +127,7 @@ export class FornecedoresCreateComponent implements OnInit {
 
 
   createFornecedor(): void {
-    if (!this.fornecedor.nome_for || !this.fornecedor.cnpj_for || !this.fornecedor.telefone_for || !this.fornecedor.razao_social_for) {
+    if (!this.fornecedor.nome_for || !this.fornecedor.cnpj_for || !this.fornecedor.telefone_for || !this.fornecedor.razao_social_for || !this.fornecedor.contatos.cep || !this.fornecedor.contatos.municipio || !this.fornecedor.contatos.logradouro || !this.fornecedor.contatos.numero || !this.fornecedor.contatos.uf) {
       alert('Preencha todos os campos obrigatórios!(*)');
       return;
     }
@@ -85,6 +135,11 @@ export class FornecedoresCreateComponent implements OnInit {
     if (this.fornecedor.cnpj_for.length < 14) {
       this.fornecedorService.showMessage('CNPJ inválido');
       return;
+    }
+
+    if (this.fornecedor.contatos.cep.length < 9) {
+      this.fornecedorService.showMessage('CEP inválido');
+      return
     }
 
     if (this.fornecedor.telefone_for.length < 15) {

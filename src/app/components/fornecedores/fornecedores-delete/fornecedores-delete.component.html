@@ -19,6 +19,28 @@
             </mat-form-field>
         </form>
 
+        <mat-card-title>Dados de Endereço</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="CEP" [value]="fornecedor.contatos.cep" name="cep" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Município" [value]="fornecedor.contatos.municipio" name="municipio" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Logradouro" [value]="fornecedor.contatos.logradouro" name="logradouro" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Número" [value]="fornecedor.contatos.numero" name="numero" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Complemento" [value]="fornecedor.contatos.complemento" name="complemento" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="UF" [value]="fornecedor.contatos.uf" name="uf" required maxlength="2" disabled>
+            </mat-form-field>
+        </form>
+
         <button mat-raised-button (click)="deleteFornecedor()" color="warn">
             Excluir
         </button>
