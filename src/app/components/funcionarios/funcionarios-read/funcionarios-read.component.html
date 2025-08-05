@@ -1,9 +1,8 @@
 <div class="search-container">
-  <mat-form-field appearance="fill" class="custom-search">
-    <mat-label>Buscar por Nome ou CPF</mat-label>
+  <div class="search-field">
     <input matInput [(ngModel)]="filtro" (ngModelChange)="filtrarFuncionarios()" placeholder="Buscar..." />
     <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
+  </div>
 </div>
 
 <div class="mat-elevation-z4">

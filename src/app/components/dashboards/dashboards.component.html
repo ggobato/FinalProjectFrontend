@@ -1,0 +1,20 @@
+<div class="dashboard-container">
+  <mat-card class="card" routerLink="/clientes" style="cursor: pointer;">
+    <mat-icon>people</mat-icon>
+    <mat-card-title>Total de Clientes</mat-card-title>
+    <mat-card-content>{{ totalClientes }}</mat-card-content>
+  </mat-card>
+
+  <mat-card class="card" routerLink="/fornecedores" style="cursor: pointer;">
+    <mat-icon>local_shipping</mat-icon>
+    <mat-card-title>Total de Fornecedores</mat-card-title>
+    <mat-card-content>{{ totalFornecedores }}</mat-card-content>
+  </mat-card>
+
+  <mat-card class="card" routerLink="/funcionarios" style="cursor: pointer;">
+    <mat-icon>badge</mat-icon>
+    <mat-card-title>Total de Funcionários</mat-card-title>
+    <mat-card-content>{{ totalFuncionarios }}</mat-card-content>
+  </mat-card>
+</div>
+

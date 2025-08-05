@@ -1,0 +1,51 @@
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.card {
+  width: 350px;
+  height: 200px;
+  border-radius: 16px;
+  border: 2px solid black;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card mat-icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 36px;
+  color: black;
+}
+
+.mat-card-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mat-card-content {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}

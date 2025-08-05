@@ -54,6 +54,7 @@ import { FuncionariosUpdateComponent } from './components/funcionarios/funcionar
 import { FuncionariosDeleteComponent } from './components/funcionarios/funcionarios-delete/funcionarios-delete.component';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud/funcionarios-crud.component';
 import {MatIconModule} from '@angular/material/icon';
+import { DashboardsComponent } from './components/dashboards/dashboards.component';
 
 
 registerLocaleData(localePt)
@@ -87,7 +88,8 @@ registerLocaleData(localePt)
     FuncionariosCreateComponent,
     FuncionariosUpdateComponent,
     FuncionariosDeleteComponent,
-    FuncionariosCrudComponent
+    FuncionariosCrudComponent,
+    DashboardsComponent
   ],
   imports: [
     BrowserModule,
